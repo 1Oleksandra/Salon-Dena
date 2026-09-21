@@ -1,0 +1,78 @@
+.bookingButton {
+  position: fixed;
+  right: clamp(1rem, 2.5vw, 2.25rem);
+  bottom: clamp(1rem, 2.5vw, 2.25rem);
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  min-height: 50px;
+  padding: 0.9rem 1.35rem;
+  color: var(--krem);
+  background: var(--brown);
+  border: 1px solid rgba(173, 133, 97, 0.75);
+  border-radius: 999px;
+  box-shadow:
+    0 14px 35px rgba(62, 20, 30, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  font-family: var(--font-text);
+  font-size: 0.76rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.bookingButton svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: var(--bej);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+  transition: stroke 0.3s ease;
+}
+
+.bookingButton:hover,
+.bookingButton:focus-visible {
+  color: var(--brown);
+  background: var(--krem);
+  border-color: var(--brown);
+  box-shadow: 0 18px 42px rgba(62, 20, 30, 0.24);
+  transform: translateY(-3px);
+}
+
+.bookingButton:hover svg,
+.bookingButton:focus-visible svg {
+  stroke: var(--brown);
+}
+
+.bookingButton:focus-visible {
+  outline: 2px solid var(--bej);
+  outline-offset: 4px;
+}
+
+@media (max-width: 540px) {
+  .bookingButton {
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.85rem 1.05rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bookingButton,
+  .bookingButton svg {
+    transition: none;
+  }
+}

@@ -1,0 +1,124 @@
+.commitment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background: var(--whiteS); 
+}
+.commitmentTitle {
+    margin-bottom: 40px;
+}
+
+.commitmentContent {
+ flex: 1 0 50%;
+}
+
+.commitmentImage {
+   flex: 1 0 50%;
+}
+
+.slides {
+  display: flex;
+  flex: 1;
+}
+
+.slide {
+  flex: 1;
+  margin-right: 30px;
+  height: 350px;
+  width: 200px;
+  position: relative;
+}
+
+.slide img {
+    position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden; 
+  /* max-width: 650px; */
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 10s linear infinite;
+}
+
+.slide {
+  flex: 0 0 auto;
+  margin-right: 30px;
+  width: 200px;
+  height: 350px;
+  position: relative;
+  overflow: hidden; /* обрізає зайве */
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* заповнює контейнер без спотворень */
+  border-radius: 8px;
+  display: block;
+}
+
+/* плавний нескінченний рух */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* рухаємо половину довжини, бо контент дубльований */
+  }
+}
+
+@media (max-width: 900px) {
+  .commitment {
+    align-items: stretch;
+    flex-direction: column-reverse;
+    gap: 2.5rem;
+    padding: 4rem 1.5rem;
+  }
+
+  .commitmentContent {
+    flex: none;
+  }
+
+  .slider {
+    flex: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .commitment {
+    gap: 2rem;
+    padding: 3rem 1rem;
+  }
+
+  .commitmentTitle {
+    margin-bottom: 1.5rem;
+  }
+
+  .slide {
+    width: 155px;
+    height: 260px;
+    margin-right: 14px;
+  }
+
+  .track {
+    animation-duration: 14s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation-play-state: paused;
+  }
+}
